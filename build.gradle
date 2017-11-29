@@ -1,0 +1,23 @@
+allprojects {
+    apply plugin: 'idea'
+}
+
+subprojects {
+    buildscript {
+        repositories {
+            mavenLocal()
+            mavenCentral()
+            maven { url "https://artifactory.metrosystems.net/artifactory/plugins-release" }
+        }
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://maven.twttr.com/" }
+        maven { url "https://artifactory.metrosystems.net/artifactory/libs-release" }
+    }
+
+    apply plugin: 'application'
+    apply plugin: 'java'
+}
